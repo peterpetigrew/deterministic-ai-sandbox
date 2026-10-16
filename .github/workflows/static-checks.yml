@@ -1,0 +1,16 @@
+# Static checks: no kernel, no libbpf, no root — parse-level CI that
+# runs on every push. Scope (and deliberate limits): ci/README.md
+name: static-checks
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: static checks (syntax, Makefile TABs, secrets, scripts)
+        run: bash ci/static-checks.sh

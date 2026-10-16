@@ -1,0 +1,10 @@
+# build artifacts
+sandbox
+sandbox.bpf.o
+src/sandbox.skel.h
+src/vmlinux.h
+
+# demo
+*.log
+sandbox.pid
+__pycache__/
